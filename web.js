@@ -5,8 +5,7 @@ var app = express.createServer(express.logger());
 app.get('/', function(request, response) {
 	var fs = require('fs');
 	var index = fs.readFileSync('index.html');
-	var json = JSON.stringify(index);
-	var data = JSON.parse(json);
+	var data = index.toString('utf-8');
 	response.send(data);
 });
 
